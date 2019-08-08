@@ -72,15 +72,16 @@ commands:
 
       Note that we assume a cache name in the format
 
-      $cache-prefix-${checksum out-file}-branch
+      your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}
 
       and we will restore it in the following sequence...
 
-      $cache-prefix-${checksum out-file}-branch
+      your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}
 
-      $cache-prefix-${checksum out-file}
+      your-prefix-{{ checksum "path/to/out/file" }}
 
-      $cache_prefix
+      your-prefix
+
     parameters:
       <<: *orb_parameters
       cache-prefix:

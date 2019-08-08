@@ -6,13 +6,13 @@ Useful when you need to chase multiple package managers
 
 Note that we assume a cache name in the format:
 
-  *$cache-prefix-${checksum out-file}-branch*
+  *your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}*
 
 
 Also we will restore it in the following sequence:
-  - *$cache-prefix-${checksum out-file}-branch*
-  - *$cache-prefix-${checksum out-file}*
-  - *$cache-prefix*
+  - *your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}*
+  - *your-prefix-{{ checksum "path/to/out/file" }}*
+  - *your-prefix*
 
 
 ## Example
