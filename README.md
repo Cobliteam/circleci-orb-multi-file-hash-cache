@@ -25,7 +25,7 @@ variables:
     cache-prefix: dep-v1
   cache_name: &cache_name dep-v1-{{ checksum "/tmp/infiles_checksum" }}-{{ .Branch }}
 orbs:
-  multi_file_hash_cache: cobli/multi-file-hash-cache@1.0.0
+  multi_file_hash_cache: cobli/multi-file-hash-cache@x.x.x
 workflows:
   tests:
     jobs:
