@@ -6,13 +6,13 @@ Useful when you need to chase multiple package managers
 
 Note that we assume a cache name in the format:
 
-  *$cache_prefix-${checksum out_file}-branch*
+  *$cache-prefix-${checksum out-file}-branch*
 
 
 Also we will restore it in the following sequence:
-  - *$cache_prefix-${checksum out_file}-branch*
-  - *$cache_prefix-${checksum out_file}*
-  - *$cache_prefix*
+  - *$cache-prefix-${checksum out-file}-branch*
+  - *$cache-prefix-${checksum out-file}*
+  - *$cache-prefix*
 
 
 ## Example
@@ -20,9 +20,9 @@ Also we will restore it in the following sequence:
 version: 2.1
 variables:
   multi_hash_args: &multi_hash_args
-    in_files: "file1.txt file2.yml"
-    out_file: /tmp/infiles_checksum
-    cache_prefix: dep-v1
+    in-files: "file1.txt file2.yml"
+    out-file: /tmp/infiles_checksum
+    cache-prefix: dep-v1
   cache_name: &cache_name dep-v1-{{ checksum "/tmp/infiles_checksum" }}-{{ .Branch }}
 orbs:
   multi_file_hash_cache: cobli/multi-file-hash-cache@1.0.0
