@@ -68,13 +68,19 @@ commands:
           command: sha256sum <<parameters.in_files>> > <<parameters.out_file>>
 
   restore:
-    description: >
+    description: |
       Generate a file with hashes from all informed files and restore it.
+
       Note that we assume a cache name in the format
+
       $cache_prefix-${checksum out_file}-branch
+
       and we will restore it in the following sequence...
+
       $cache_prefix-${checksum out_file}-branch
+
       $cache_prefix-${checksum out_file}
+
       $cache_prefix
     parameters:
       <<: *orb_parameters
