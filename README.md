@@ -4,6 +4,16 @@ cache system considering multiples files to generate the hash part of keys
 
 Useful when you need to chase multiple package managers
 
+Note that we assume a cache name in the format:
+
+  *$cache_prefix-${checksum out_file}-branch*
+
+
+Also we will restore it in the following sequence:
+  - *$cache_prefix-${checksum out_file}-branch*
+  - *$cache_prefix-${checksum out_file}*
+  - *$cache_prefix*
+
 
 ## Example
 ```yaml
