@@ -58,7 +58,7 @@ jobs:
           command: echo "Testing again..."
 ```
 
-## Needs:
+## Dependencies:
 - [sha256sum](https://linux.die.net/man/1/sha256sum) => This orb makes use of
   the command line sha256sum so the CircleCI machine or base container needs to
   have it.
