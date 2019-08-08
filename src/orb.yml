@@ -67,20 +67,15 @@ commands:
           command: sha256sum <<parameters.in-files>> > <<parameters.out-file>>
 
   restore:
-    description: |
+    description: |2
       Generate a file with hashes from all informed files and restore it.
-
       Note that we assume a cache name in the format
+        your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}
 
-      your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}
-
-      and we will restore it in the following sequence...
-
-      your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}
-
-      your-prefix-{{ checksum "path/to/out/file" }}
-
-      your-prefix
+      And we will restore it in the following sequence:
+        your-prefix-{{ checksum "path/to/out/file" }}-{{ .Branch }}
+        your-prefix-{{ checksum "path/to/out/file" }}
+        your-prefix
 
     parameters:
       <<: *orb_parameters
